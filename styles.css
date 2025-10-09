@@ -1,0 +1,41 @@
+ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-image: radial-gradient(circle, #ff00ff, #000000);
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  flex-direction: column;
+  text-align: center;
+  color: hsla(233, 100%, 89%, 1);
+  margin: 20px;
+}
+.header h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.game {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+}
+.card {
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+}
