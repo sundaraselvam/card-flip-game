@@ -14,8 +14,9 @@ body {
   padding: 10px;
   flex-direction: column;
   text-align: center;
-  color: hsla(233, 100%, 89%, 1);
+  color: #fff7f7ff;
   margin: 20px;
+  text-shadow: 2px 2px 4px hsla(0, 0%, 100%, 1);
 }
 .header h3 {
   font-size: 25px;
@@ -38,4 +39,11 @@ body {
   width: 100px;
   height: 100px;
   margin: 1px;
+}
+#reset {
+  font-size: 20px;
+  background-color: orange;
+  padding: 10px 20px;
+  color: red;
+  border: none;
 }
