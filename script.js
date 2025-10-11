@@ -15,5 +15,4 @@ const cardAssignments = () => {
     }
     allCards.push(...ogCards, ...duCards);
     return allCards;
-    
 };
