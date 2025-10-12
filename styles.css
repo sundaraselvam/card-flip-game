@@ -59,3 +59,8 @@ body {
     transform: rotateY(180deg);
   }
 }
+.matched {
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.5s;
+}

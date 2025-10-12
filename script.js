@@ -23,12 +23,24 @@ const cardAssignments = () => {
     }
 };
 const handleClick = (id) => {
-
     const currentCard = document.getElementById(id);
     currentCard.classList.add("flip");
-    // 1. Got to create a variable that will check the previous card clicked
-    // 2. if the current card clicked matches the previous card clicked, then we leave both cards face up
-    // 3. if the current card clicked does not match the previous card clicked, then we flip both cards back over
-    // 4. We also need to make sure that if a card is already face up, we do not do anything when it is clicked again
-    return id;
-}
+    if(previousCard.src !== currentCard.src){
+        if(previousCard.src === ""){
+            previousCard = currentCard;
+        }
+        else{
+            if(previousCard.src === currentCard.src){
+                previousCard.classList.add("matched");
+                currentCard.classList.add("matched");
+            }
+            else{
+                setTimeout(() => {
+                    previousCard.classList.remove("flip");
+                    currentCard.classList.remove("flip");
+                    previousCard = "";
+                }, 1000);
+            }
+        }
+    }
+};
