@@ -33,6 +33,7 @@ const handleClick = (id) => {
             if(previousCard.src === currentCard.src){
                 previousCard.classList.add("matched");
                 currentCard.classList.add("matched");
+                previousCard = "";
             }
             else{
                 setTimeout(() => {
