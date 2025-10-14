@@ -47,10 +47,11 @@ body {
   color: red;
   border: none;
 }
-.flip {
+.card.flip {
   transform: rotateY(180deg);
   transition: transform 1s;
 }
+
 @keyframes flip {
   from {
     transform: rotateY(0deg);
