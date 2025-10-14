@@ -1,47 +1,22 @@
-const cardAssignments = () => {
-    const ogCards = [];
-    const duCards = [];
-    const allCards = [];
-    for (let i = 1; i <= 16; i++) {
-        const cardValues = Math.floor(Math.random() * 8 + 1);
-        if (!ogCards.includes(cardValues)) {
-            ogCards.push(cardValues);
-        }
-        else {
-            if (!duCards.includes(cardValues)) {
-                duCards.push(cardValues);
-            }
-            else {
-                i--;
-            }
-        }
+function loading(){
+    cards = [{id:1, img: "assets/1.png"}, {id:2, img: "assets/2.png"}, {id:1, img: "assets/1.png"}, {id:2, img: "assets/2.png"}];
+    console.log(shuffle(cards));
+}
+function shuffle(cards){
+    let currentIndex = cards.length;
+    let temp;
+    let randomIndex;
+    while(currentIndex !== 0){
+        randomIndex = Math.floor(Math.random()* currentIndex); // 1, 2, 2
+        currentIndex--; // 3, 2, 1, 0
+        temp = cards[currentIndex]; // 3, 2 , 1
+        cards[currentIndex] = cards[randomIndex]; // 1, 2, 1
+        cards[randomIndex] = temp; // 3, 2 , 1
     }
-    allCards.push(...ogCards, ...duCards);
-    for(let j = 1; j <= 16; j++){
-        const imageElement = document.getElementById(j);
-        imageElement.src = `assets/${allCards[j-1]}.png`;
-    }
-};
-const handleClick = (id) => {
-    const currentCard = document.getElementById(id);
-    currentCard.classList.add("flip");
-    if(previousCard.src !== currentCard.src){
-        if(previousCard.src === ""){
-            previousCard = currentCard;
-        }
-        else{
-            if(previousCard.src === currentCard.src){
-                previousCard.classList.add("matched");
-                currentCard.classList.add("matched");
-                previousCard = "";
-            }
-            else{
-                setTimeout(() => {
-                    previousCard.classList.remove("flip");
-                    currentCard.classList.remove("flip");
-                    previousCard = "";
-                }, 1000);
-            }
-        }
-    }
-};
+    return cards;
+}
+
+// card []
+// back
+// front
+// position absolute/relative
